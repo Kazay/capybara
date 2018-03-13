@@ -15,7 +15,7 @@ class CreatePerformancesTable extends Migration
     {
         Schema::create('performances', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
+            $table->dateTime('date');
             $table->integer('play_id')->unsigned();
             $table->timestamps();
 
