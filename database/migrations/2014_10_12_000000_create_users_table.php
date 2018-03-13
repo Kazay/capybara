@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_email_public');
             $table->string('password');
             $table->integer('role')->unsigned()->default(1);
+            $table->boolean('active');
             $table->rememberToken();
             $table->timestamps();
         });
