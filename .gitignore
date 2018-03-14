@@ -12,3 +12,6 @@ npm-debug.log
 yarn-error.log
 .env
 database/structure/diagrams.mwb.bak
+/public/css/app.css
+/public/js/app.js
+/public/phpinfo.php
