@@ -11,6 +11,16 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
 
     /**
+     * Define roles for global use
+     * Needed for ValidateRole Middleware
+     */
+    const ROLE = [
+        "guest" => 1,
+        "member" => 2,
+        "admin" => 4,
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
