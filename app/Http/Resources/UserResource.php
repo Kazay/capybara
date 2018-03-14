@@ -23,6 +23,10 @@ class UserResource extends JsonResource
             "lastname" => $this->lastname($request),
             "email" => $this->email($request),
             "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at,
+            $this->mergeWhen($this->isAdmin($request), [
+                "active" => $this->active,
+            ])
         ];
     }
 
@@ -34,7 +38,7 @@ class UserResource extends JsonResource
      */
     public function lastName($req)
     {
-        if (User::hasRole($req->user(), 'admin') || $this->isOwner($req))
+        if ($this->isAdmin($req)  || $this->isOwner($req))
         {
             return $this->lastname;
         }
@@ -52,7 +56,7 @@ class UserResource extends JsonResource
      */
     public function email($req)
     {
-        if (User::hasRole($req->user(), 'admin') || $this->isOwner($req))
+        if ($this->isAdmin($req) || $this->isOwner($req))
         {
             return $this->email;
         }
@@ -60,6 +64,11 @@ class UserResource extends JsonResource
         {
             return "hidden";
         }
+    }
+
+    public function isAdmin($req)
+    {
+        return User::hasRole($req->user(), 'admin');
     }
 
     /**
