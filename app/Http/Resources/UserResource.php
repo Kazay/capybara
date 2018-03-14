@@ -3,23 +3,10 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\User;
 
 class UserResource extends JsonResource
 {
-    /**
-     * Expect an info about identified user who reads the ressource
-     *
-     * @var [type]
-     */
-    protected $isOwner;
-
-    public function __construct($resource, $isOwner = false)
-    {
-        // Parent class constructor
-        $this->resource = $resource;
-        
-        $this->isOwner = $isOwner;
-    }
     /**
      * Transform the resource into an array.
      *
@@ -33,9 +20,56 @@ class UserResource extends JsonResource
             "role" => $this->role,
             "username" => $this->username,
             "firstname" => $this->firstname,
-            "lastname" => ($this->is_lastname_public || $this->isOwner) ? $this->lastname : substr($this->lastname, 0, 1),
-            "email" => ($this->is_email_public || $this->isOwner) ? $this->email : "hidden",
+            "lastname" => $this->lastname($request),
+            "email" => $this->email($request),
             "created_at" => $this->created_at,
         ];
+    }
+
+    /**
+     * Adapt lastname field to user permissions
+     *
+     * @param \Illuminate\Http\Request $req
+     * @return String
+     */
+    public function lastName($req)
+    {
+        if (User::hasRole($req->user(), 'admin') || $this->isOwner($req))
+        {
+            return $this->lastname;
+        }
+        else
+        {
+            return substr($this->lastname, 0, 1);
+        }
+    }
+
+    /**
+     * Adapt email field to user permissions
+     *
+     * @param \Illuminate\Http\Request $req
+     * @return String
+     */
+    public function email($req)
+    {
+        if (User::hasRole($req->user(), 'admin') || $this->isOwner($req))
+        {
+            return $this->email;
+        }
+        else
+        {
+            return "hidden";
+        }
+    }
+
+    /**
+     * Check if current user is the ressource owner
+     *
+     * @param \Illuminate\Http\Request $req
+     * @return boolean
+     */
+    public function isOwner($req)
+    {
+        return ($req->user()->id == $this->id);
     }
 }

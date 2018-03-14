@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 /**
- * Holds common function for a RESTful api.
+ * Holds common function for a RESTful
  */
 class ApiController extends Controller
 {

@@ -37,4 +37,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Check if user has role
+     *
+     * @param \App\Models\User $user
+     * @param String $role
+     * @return boolean
+     */
+    public static function hasRole(User $user, $role)
+    {
+        return ($user->role & User::ROLE[$role]) != 0;
+    }
 }

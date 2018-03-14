@@ -10,17 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersPublicController extends ApiController
 {
-    /**
-     * Holds authenticated user's infos
-     *
-     * @var Auth
-     */
-    protected $auth;
-
     public function __construct()
     {
         $this->middleware('auth:api');
-        $this->auth = Auth::guard('api')->user();
     }
 
     /**
@@ -28,7 +20,7 @@ class UsersPublicController extends ApiController
      *
      * @return Json
      */     
-    public function showUsers()
+    public function showUsers(Request $req)
     {
         $users = User::all();
 
@@ -41,9 +33,7 @@ class UsersPublicController extends ApiController
 
         foreach ($users as $user)
         {
-            // Check user rights on ressources
-            $isOwner = ($this->auth->role & User::ROLE['admin']) != 0 || $user->id == $this->auth->id;
-            array_push($response, new UserResource($user, $isOwner));
+            array_push($response, new UserResource($user));
         }
 
         return response()->json($response);
@@ -55,16 +45,14 @@ class UsersPublicController extends ApiController
      * @param uInt $id
      * @return Json
      */
-    public function showUser($id)
+    public function showUser(Request $req, $id)
     {
         $user = User::find($id);
 
         if (is_null($user))
             return $this->notFoundResponse();
 
-        // Check user rights on ressources
-        $isOwner = ($this->auth->role & User::ROLE['admin']) != 0 || $user->id == $this->auth->id;
-        $response = new UserResource($user, $isOwner);
+        $response = new UserResource($user);
 
         return response()->json($response);
     }
