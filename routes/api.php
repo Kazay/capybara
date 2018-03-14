@@ -19,12 +19,25 @@ Route::middleware('auth:api')->group(function() {
     });
 
     Route::namespace('Api\Users')->group(function() {
-        Route::get('/users', "UsersPublicController@showUsers")->name('userList');
-        Route::get('/users/{id}', "UsersPublicController@showUser");
+        Route::get('/users', "UsersController@index")->name('userList');
+        Route::get('/users/{id}', "UsersController@show");
 
         Route::middleware('role:admin')->group(function() {
-            Route::put('/users/ban/{id}', "UsersAdminController@banUser");
-            Route::put('/users/unban/{id}', "UsersAdminController@unbanUser");
+            Route::put('/users/ban/{id}', "UsersController@ban");
+        });
+    });
+
+    Route::namespace('Api\Production')->group(function() {
+        Route::get('/troupes', 'TroupesController@index');
+        Route::get('/troupes/{troupe}', 'TroupesController@show');
+
+        Route::get('/directors', 'DirectorsController@index');
+        Route::get('/directors/{director}', 'DirectorsController@show');
+
+        Route::middleware('role:admin')->group(function() {
+            Route::post('/troupes', 'TroupesController@store');
+            Route::put('/troupes/{troupe}', 'TroupesController@update');
+            Route::delete('/troupes/{troupe}', 'TroupesController@destroy');
         });
     });
 });
