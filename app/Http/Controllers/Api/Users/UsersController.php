@@ -19,11 +19,6 @@ class UsersController extends Controller
     {
         $users = User::paginate();
 
-        if ($users->count() == 0)
-        {
-            return $this->notFoundResponse('Oops, looks like there\'s nothing in there');
-        }
-
         return UserResource::collection($users);
     }
 
@@ -33,13 +28,8 @@ class UsersController extends Controller
      * @param uInt $id
      * @return Json
      */
-    public function show(Request $req, $id)
+    public function show(Request $req, User $user)
     {
-        $user = User::find($id);
-
-        if (is_null($user))
-            return $this->notFoundResponse();
-
         return new UserResource($user);
     }
 
@@ -49,13 +39,8 @@ class UsersController extends Controller
      * @param uInt $id
      * @return void
      */
-    public function ban($id)
+    public function ban(User $user)
     {
-        $user = User::find($id);
-
-        if (is_null($user))
-            return $this->notFoundResponse();
-
         $user->active = ! $user->active;
 
         $user->save();

@@ -14,11 +14,6 @@ class TroupesController extends Controller
     {
         $troupes = Troupe::paginate();
 
-        if ($troupes->count() == 0)
-        {
-            return $this->notFoundResponse('Oops, looks like there\'s nothing in there');
-        }
-
         return TroupeResource::collection($troupes);
     }
 
