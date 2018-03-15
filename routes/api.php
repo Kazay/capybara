@@ -18,30 +18,37 @@ Route::middleware('auth:api')->group(function() {
         return $request->user();
     });
 
-    Route::namespace('Api\Users')->group(function() {
-        Route::get('/users',        "UsersController@index");
+    Route::namespace('Api')->group(function () {
+        // public users
+        Route::get('/users', "UsersController@index");
         Route::get('/users/{user}', "UsersController@show");
 
-        Route::middleware('role:admin')->group(function() {
+        Route::middleware('role:admin')->group(function () {
+            // Users admin
             Route::put('/users/ban/{user}', "UsersController@ban");
         });
-    });
+    
 
-    Route::namespace('Api\Production')->group(function() {
-        Route::get('/troupes',          'TroupesController@index');
-        Route::get('/troupes/{troupe}', 'TroupesController@show');
+        Route::namespace('Production')->group(function () {
+            // Troupes public
+            Route::get('/troupes', 'TroupesController@index');
+            Route::get('/troupes/{troupe}', 'TroupesController@show');
 
-        Route::get('/directors',            'DirectorsController@index');
-        Route::get('/directors/{director}', 'DirectorsController@show');
+            // Directors public
+            Route::get('/directors', 'DirectorsController@index');
+            Route::get('/directors/{director}', 'DirectorsController@show');
 
-        Route::middleware('role:admin')->group(function() {
-            Route::post     ('/troupes',          'TroupesController@store');
-            Route::put      ('/troupes/{troupe}', 'TroupesController@update');
-            Route::delete   ('/troupes/{troupe}', 'TroupesController@destroy');
+            Route::middleware('role:admin')->group(function () {
+                // troupes admin
+                Route::post('/troupes', 'TroupesController@store');
+                Route::put('/troupes/{troupe}', 'TroupesController@update');
+                Route::delete('/troupes/{troupe}', 'TroupesController@destroy');
 
-            Route::post     ('/directors',              'DirectorsController@store');
-            Route::put      ('/directors/{director}',   'DirectorsController@update');
-            Route::delete   ('/directors/{director}',   'DirectorsController@destroy');
+                // directors admin
+                Route::post('/directors', 'DirectorsController@store');
+                Route::put('/directors/{director}', 'DirectorsController@update');
+                Route::delete('/directors/{director}', 'DirectorsController@destroy');
+            });
         });
     });
 });
