@@ -20,12 +20,21 @@ Route::middleware('auth:api')->group(function() {
 
     Route::namespace('Api')->group(function () {
         // public users
-        Route::get('/users', "UsersController@index");
+        Route::get('/users',        "UsersController@index");
         Route::get('/users/{user}', "UsersController@show");
+
+        // Plays public
+        Route::get('/plays',        'PlaysController@index');
+        Route::get('/plays/{play}', 'PlaysController@show');
 
         Route::middleware('role:admin')->group(function () {
             // Users admin
             Route::put('/users/ban/{user}', "UsersController@ban");
+
+            // Plays admin
+            Route::post  ('/plays',          'PlaysController@store');
+            Route::put   ('plays/{play}',    'PlaysController@update');
+            Route::delete('plays/{play}',    'PlaysController@destroy');
         });
     
 
