@@ -24,6 +24,10 @@ class TroupesController extends Controller
 
     public function store(Request $req)
     {
+        $this->validate($req, [
+            "name" => "required|string|max:255"
+        ]);
+
         $troupe = new Troupe();
 
         $troupe->name = $req->name;
@@ -33,8 +37,17 @@ class TroupesController extends Controller
         return new TroupeResource($troupe);
     }
 
+    protected function storeMany(Request $req)
+    {
+
+    }
+
     public function update(Request $req, Troupe $troupe)
     {
+        $this->validate($req, [
+            "name" => "required|string|max:255"
+        ]);
+
         $troupe->name = $req->name;
 
         $troupe->save();
