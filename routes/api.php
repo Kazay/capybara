@@ -27,14 +27,23 @@ Route::middleware('auth:api')->group(function() {
         Route::get('/plays',        'PlaysController@index');
         Route::get('/plays/{play}', 'PlaysController@show');
 
+        // Performances public
+        Route::get('/performances',                 'PerformancesController@index');
+        Route::get('/performances/{performance}',   'PerformancesController@show');
+
         Route::middleware('role:admin')->group(function () {
             // Users admin
             Route::put('/users/ban/{user}', "UsersController@ban");
 
             // Plays admin
-            Route::post  ('/plays',          'PlaysController@store');
-            Route::put   ('plays/{play}',    'PlaysController@update');
-            Route::delete('plays/{play}',    'PlaysController@destroy');
+            Route::post  ('/plays',         'PlaysController@store');
+            Route::put   ('/plays/{play}',  'PlaysController@update');
+            Route::delete('/plays/{play}',  'PlaysController@destroy');
+
+            // Performances Admin
+            Route::post  ('/performances',                  'PerformancesController@store');
+            Route::put   ('/performances/{performance}',    'PerformancesController@update');
+            Route::delete('/performances/{performance}',    'PerformancesController@destroy');
         });
     
 
