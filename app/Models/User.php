@@ -38,6 +38,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function ticketing()
+    {
+        return $this->belongsToMany('Models\Performance');
+    }
+
     /**
      * Check if user has role
      *

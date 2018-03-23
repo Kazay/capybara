@@ -25,7 +25,7 @@ class UserResource extends JsonResource
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
             $this->mergeWhen($this->isAdmin($request), [
-                "active" => $this->active,
+                "active" => ($this->active == 1),
             ])
         ];
     }

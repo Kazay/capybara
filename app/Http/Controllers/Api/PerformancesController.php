@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\User;
 use App\Models\Performance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -86,5 +87,19 @@ class PerformancesController extends Controller
         $performance->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function subscribe(Request $request, Performance $performance)
+    {
+        $user = $request->user();
+
+        if ($request->has('user'))
+        {
+            $user = User::find($request->user);
+        }
+
+        $performance->ticketing()->attach($user->id);
+
+        return response()->json($performance->ticketing);
     }
 }

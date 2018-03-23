@@ -14,10 +14,20 @@ class PerformanceResource extends JsonResource
      */
     public function toArray($request)
     {
+        $ticketing = [];
+
+        foreach ($this->ticketing as $t)
+        {
+            array_push($ticketing, $t->id);
+        }
+
         return [
             'id' => $this->id,
             'date' => $this->date,
-            'play' => $this->play,
+            'play' => new PlayResource($this->play),
+            'ticketing' => [ 
+                'users' => $ticketing, 
+            ],
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

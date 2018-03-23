@@ -28,8 +28,9 @@ Route::middleware('auth:api')->group(function() {
         Route::get('/plays/{play}', 'PlaysController@show');
 
         // Performances public
-        Route::get('/performances',                 'PerformancesController@index');
-        Route::get('/performances/{performance}',   'PerformancesController@show');
+        Route::get('/performances',                         'PerformancesController@index');
+        Route::get('/performances/{performance}',           'PerformancesController@show');
+        Route::put('/performances/{performance}/subscribe', 'PerformancesController@subscribe');
 
         Route::middleware('role:admin')->group(function () {
             // Users admin

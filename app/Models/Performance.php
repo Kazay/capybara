@@ -17,4 +17,14 @@ class Performance extends Model
     {
         return $this->belongsTo('App\Models\Play');
     }
+
+    /**
+     * Many to Many relationship
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function ticketing()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
 }

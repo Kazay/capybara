@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerformancesUsersTable extends Migration
+class CreatePerformanceUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePerformancesUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('performances_users', function (Blueprint $table) {
+        Schema::create('performance_user', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->integer('performance_id')->unsigned();
 
@@ -31,12 +31,12 @@ class CreatePerformancesUsersTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('performances_users'))
+        if (Schema::hasTable('performance_user'))
         {    
-            Schema::table('performances_users', function(Blueprint $table) {
+            Schema::table('performance_user', function(Blueprint $table) {
                 $table->dropForeign(['user_id', 'performance_id']);
             });
         }
-        Schema::dropIfExists('performances_users');
+        Schema::dropIfExists('performance_user');
     }
 }
