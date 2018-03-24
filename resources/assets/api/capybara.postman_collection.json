@@ -1,0 +1,1119 @@
+{
+	"info": {
+		"_postman_id": "e12d6c03-ab42-4ef1-92bb-0aa86532b462",
+		"name": "capybara",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Director",
+			"description": "",
+			"item": [
+				{
+					"name": "Director Create",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Lara\",\n\t\"lastname\": \"Fabian\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/troupe",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"troupe"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Director Read",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Lara\",\n\t\"lastname\": \"Fabian\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/directors",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"directors"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Director Update",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Lara\",\n\t\"lastname\": \"Fabian\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/directors/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"directors",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Director Delete",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.33.110/api/directors/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"directors",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Troupe",
+			"description": null,
+			"item": [
+				{
+					"name": "Troupes Create",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"xxx\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/troupes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"troupes"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Troupes Read",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Lara\",\n\t\"lastname\": \"Fabian\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/troupes/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"troupes",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Troupes Update",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"xxx\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/troupes/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"troupes",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Troupes Delete",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.33.110/api/troupes/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"troupes",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "User ban/unban",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.33.110/api/users/ban/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"users",
+								"ban",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plays",
+			"description": null,
+			"item": [
+				{
+					"name": "Play Create",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"J'aime les femmes\",\n\t\"troupe\": \"1\",\n\t\"director\": 1,\n\t\"author\": \"De chez Chanel\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/plays/6",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"plays",
+								"6"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Play Read",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Hamelette\",\n\t\"troupe\": \"5\",\n\t\"director\": 2,\n\t\"author\": \"Secoue moi la lance\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/plays/2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"plays",
+								"2"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Play Update",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Suce\",\n\t\"troupe\": \"7\",\n\t\"director\": 1,\n\t\"author\": \"Ma lance\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/plays/4",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"plays",
+								"4"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "Play Delete",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.33.110/api/plays/3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"plays",
+								"3"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Perfomances",
+			"description": "",
+			"item": [
+				{
+					"name": "performances Create",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date\": \"2018-05-11 20:30:00\",\n\t\"play\": 6\n}\n\t"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/performances",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"performances"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "performances Read",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Hamelette\",\n\t\"troupe\": \"5\",\n\t\"director\": 2,\n\t\"author\": \"Secoue moi la lance\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/performances",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"performances"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "performances Update",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date\": \"2018-065-11 20:30:00\",\n\t\"play\": 2\n}\n\t"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/performances/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"performances",
+								"1"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "performances Delete",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://192.168.33.110/api/performances/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"performances",
+								""
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				},
+				{
+					"name": "performances Subscribe",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3NjZlODk4YzQ3NWE4NmYwY2NkYjk5YTVjYWFjNjJiNjQ0ZTkzNzMwODNkNThjZGUyZTc1NjFjYTkyOWQ1YTUwNDI5NTMwZjc0YTlmOTg1In0.eyJhdWQiOiIyIiwianRpIjoiOTc2NmU4OThjNDc1YTg2ZjBjY2RiOTlhNWNhYWM2MmI2NDRlOTM3MzA4M2Q1OGNkZTJlNzU2MWNhOTI5ZDVhNTA0Mjk1MzBmNzRhOWY5ODUiLCJpYXQiOjE1MjA5MzgyMjMsIm5iZiI6MTUyMDkzODIyMywiZXhwIjoxNTUyNDc0MjIyLCJzdWIiOiIxIiwic2NvcGVzIjpbIioiXX0.PuCU2JI9jlly8zN46fOdx4A4CjksYMiF-UoehDTDMC1PPsgWZpLeDoF1aBVnbUB2RUYb6nB9PTmBb_0o5wN5EA9RHsPyTdgq7AXZC2BaUfa7xMJvA83Uy2qPkBz4xoN7eHnpCkMs1K0r8pGm7L-QdRteE0xedl2EbYTpMISEQNItvSqlvxFfUs6y3SL20WyhOZZ-R6QhynTbRDBAwE5FKyJVkPpe9n07-Jwql9xWfDtEqWMnsGK6PL7oRQajqBJxDwc_mCVVW99mYYG1hYSGAAgVMOLu_33-F0jF1mYPgECk36p67_uyMcdgPFBiAzf4WruYlJo_DdmAyaiFXpR3vTb4TEePvuBFadVMWojI1gFbnp_EOKX13VyfAwxMN2cx-pYZIEw17RdYUH_Yc0OY5CcoKBGMp1rfu9ghabD5AdYgHtmfQT5ae5ccIf7X6VTeG0ZMBa3Bc-rS1RHFLNZl1AS_ANw88TgjaY7jRlLov2UwhIF3bV2Ul2QqcpG2ZMcNZxHIZIppA8X9q8XoG-qEbA2vc-Wes_bA-woLE63EBe2V5qcfJ9yvd-U0r3n-5tyIJWAodb2TfYTCB7UKbm-kc9zG2tMdE_ZiQFY6-617L2YVWjsn_c8dI9m8GSRRjQiRN3XntDzLvIIcl8Al5RMoBYV5OLD0CmxJ5ltEW4n5rgQ",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRF-TOKEN",
+								"value": "4HK98NKIKDhw4pSBvMyKjLM1bxmmnaA8BV0CVpNZgVk="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\" = \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://192.168.33.110/api/performances/5/subscribe",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"33",
+								"110"
+							],
+							"path": [
+								"api",
+								"performances",
+								"5",
+								"subscribe"
+							]
+						},
+						"description": "\t"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
