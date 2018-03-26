@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\AuthenticationException;
 use App\Models\User;
 
@@ -23,17 +22,15 @@ class AuthorizeRole
      */
     public function handle($request, Closure $next, ...$roles)
     {
-        if (Auth::guard('api')->check()) {
-            foreach ($roles as $role) {
-                // Bitwise check of roles
-                if ((User::ROLE[$role] & Auth::user()->role) != 0) {
-                    return $next($request);
-                }
-            }
+        $userRole = $request->user()->role;
 
-            return response()->json(['message' => 'Unauthorized'], 403);
+        foreach ($roles as $role) {
+            // Bitwise check of roles
+            if (User::hasRole($request->user, User::ROLE[$role])) {
+                return $next($request);
+            }
         }
 
-        throw new AuthenticationException('Unauthenticated.', 'api');
+        abort(403, "Unauthorized");
     }
 }
