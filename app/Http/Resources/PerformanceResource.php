@@ -18,18 +18,21 @@ class PerformanceResource extends JsonResource
 
         foreach ($this->ticketing as $t)
         {
-            array_push($ticketing, $t->id);
+            array_push($ticketing, url('api/users/' . $t->id));
         }
 
         return [
             'id' => $this->id,
             'date' => $this->date,
-            'play' => new PlayResource($this->play),
-            'ticketing' => [ 
-                'users' => $ticketing, 
+            'play' => [ 
+                'id' => $this->play->id,
+                'name' => $this->play->name,
+                'author' => $this->play->author,
+                'link' => url('api/plays/' . $this->play->id),
             ],
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'ticketing' => $ticketing,
+            'created_at' => $this->created_at->toDateTimeString(),
+            'updated_at' => $this->updated_at->toDateTimeString(),
         ];
     }
 }

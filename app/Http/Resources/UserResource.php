@@ -22,8 +22,9 @@ class UserResource extends JsonResource
             "firstname" => $this->firstname,
             "lastname" => $this->lastname($request),
             "email" => $this->email($request),
-            "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at,
+            "current_tickets" => $this->currentTickets(),
+            "created_at" => $this->created_at->toDateTimeString(),
+            "updated_at" => $this->updated_at->toDateTimeString(),
             $this->mergeWhen($this->isAdmin($request), [
                 "active" => ($this->active == 1),
             ])
@@ -38,7 +39,9 @@ class UserResource extends JsonResource
      */
     public function lastName($req)
     {
-        if ($this->isAdmin($req)  || $this->isOwner($req))
+        if ($this->isAdmin($req) 
+            || $this->isOwner($req)
+            || $this->isPublic('lastname'))
         {
             return $this->lastname;
         }
@@ -56,7 +59,9 @@ class UserResource extends JsonResource
      */
     public function email($req)
     {
-        if ($this->isAdmin($req) || $this->isOwner($req))
+        if ($this->isAdmin($req) 
+            || $this->isOwner($req)
+            || $this->isPublic('email'))
         {
             return $this->email;
         }
@@ -80,5 +85,26 @@ class UserResource extends JsonResource
     public function isOwner($req)
     {
         return ($req->user()->id == $this->id);
+    }
+
+    public function isPublic($string)
+    {
+        $property = 'is_'.$string.'_public';
+        return $this->{$property};
+    }
+
+    public function currentTickets()
+    {
+        $tickets = $this->ticketing;
+
+        $out = [];
+
+        foreach($tickets as $ticket)
+        {
+            if (strtotime($ticket->date) >= strtotime('-1 day'))
+                array_push($out, url('api/performances/' . $ticket->id));
+        }
+
+        return $out;
     }
 }
