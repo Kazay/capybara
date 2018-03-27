@@ -20,17 +20,19 @@ Route::middleware('auth:api')->group(function() {
 
     Route::namespace('Api')->group(function () {
         // public users
-        Route::get('/users',        "UsersController@index");
-        Route::get('/users/{user}', "UsersController@show");
+        Route::get('/users',                "UsersController@index");
+        Route::get('/users/{user}',         "UsersController@show");
+        Route::get('/users/{user}/tickets', "UserController@ticketing");
 
         // Plays public
         Route::get('/plays',        'PlaysController@index');
         Route::get('/plays/{play}', 'PlaysController@show');
 
         // Performances public
-        Route::get('/performances',                         'PerformancesController@index');
-        Route::get('/performances/{performance}',           'PerformancesController@show');
-        Route::put('/performances/{performance}/subscribe', 'PerformancesController@subscribe');
+        Route::get('/performances',                             'PerformancesController@index');
+        Route::get('/performances/{performance}',               'PerformancesController@show');
+        Route::put('/performances/{performance}/subscribe',     'PerformancesController@subscribe');
+        Route::put('/performances/{performance}/unsubscribe',   'PerformancesController@unsubscribe');
 
         Route::middleware('role:admin')->group(function () {
             // Users admin
@@ -50,23 +52,23 @@ Route::middleware('auth:api')->group(function() {
 
         Route::namespace('Production')->group(function () {
             // Troupes public
-            Route::get('/troupes', 'TroupesController@index');
+            Route::get('/troupes',          'TroupesController@index');
             Route::get('/troupes/{troupe}', 'TroupesController@show');
 
             // Directors public
-            Route::get('/directors', 'DirectorsController@index');
+            Route::get('/directors',            'DirectorsController@index');
             Route::get('/directors/{director}', 'DirectorsController@show');
 
             Route::middleware('role:admin')->group(function () {
                 // troupes admin
-                Route::post('/troupes', 'TroupesController@store');
-                Route::put('/troupes/{troupe}', 'TroupesController@update');
-                Route::delete('/troupes/{troupe}', 'TroupesController@destroy');
+                Route::post('/troupes',             'TroupesController@store');
+                Route::put('/troupes/{troupe}',     'TroupesController@update');
+                Route::delete('/troupes/{troupe}',  'TroupesController@destroy');
 
                 // directors admin
-                Route::post('/directors', 'DirectorsController@store');
-                Route::put('/directors/{director}', 'DirectorsController@update');
-                Route::delete('/directors/{director}', 'DirectorsController@destroy');
+                Route::post('/directors',               'DirectorsController@store');
+                Route::put('/directors/{director}',     'DirectorsController@update');
+                Route::delete('/directors/{director}',  'DirectorsController@destroy');
             });
         });
     });

@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function ticketing()
     {
-        return $this->belongsToMany('Models\Performance');
+        return $this->belongsToMany('App\Models\Performance');
     }
 
     /**
