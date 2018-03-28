@@ -17,4 +17,9 @@ class Play extends Model
     {
         return $this->belongsTo('App\Models\Director');
     }
+
+    public function performances()
+    {
+        return $this->hasMany('App\Models\Performance');
+    }
 }

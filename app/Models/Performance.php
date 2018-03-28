@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Performance extends Model
 {
@@ -26,5 +27,10 @@ class Performance extends Model
     public function ticketing()
     {
         return $this->belongsToMany('App\Models\User');
+    }
+
+    public function scopeOnlyCurrent($query)
+    {
+        return $query->where('date', '>', Carbon::today());
     }
 }

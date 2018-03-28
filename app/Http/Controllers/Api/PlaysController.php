@@ -53,9 +53,13 @@ class PlaysController extends Controller
      * @param  \App\Models\Play  $play
      * @return \Illuminate\Http\Response
      */
-    public function show(Play $play)
+    public function show(Request $request, Play $play)
     {
-        return new PlayResource($play);
+        $showDates = "current";
+        if ($request->has('dates') && $request->dates == "all")
+            $showDates = "all";
+
+        return new PlayResource($play, $showDates);
     }
 
     /**

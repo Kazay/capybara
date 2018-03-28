@@ -14,13 +14,17 @@ class PerformanceResource extends JsonResource
      */
     public function toArray($request)
     {
-        $ticketing = [];
+        // eager load
+        $this->resource->load('ticketing', 'play');
 
+        // retrieve ticketings
+        $ticketing = [];
         foreach ($this->ticketing as $t)
         {
             array_push($ticketing, url('api/users/' . $t->id));
         }
 
+        // resource output
         return [
             'id' => $this->id,
             'date' => $this->date,
