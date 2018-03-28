@@ -15,7 +15,7 @@ class PerformanceResource extends JsonResource
     public function toArray($request)
     {
         // eager load
-        $this->resource->load('ticketing', 'play');
+        $this->resource->load('ticketing', 'play', 'play.troupe', 'play.director');
 
         // retrieve ticketings
         $ticketing = [];
@@ -33,6 +33,16 @@ class PerformanceResource extends JsonResource
                 'name' => $this->play->name,
                 'author' => $this->play->author,
                 'link' => url('api/plays/' . $this->play->id),
+                'troupe' => [
+                    'id' => $this->play->troupe->id,
+                    'name' => $this->play->troupe->name,
+                    'link' => url('/api/troupe/' . $this->play->troupe->id),
+                ],
+                'director' => [
+                    'id' => $this->play->director->id,
+                    'name' => "{$this->play->director->firstname} {$this->play->director->lastname}",
+                    'link' => url('/api/director/' . $this->play->director->id),
+                ]
             ],
             'ticketing' => $ticketing,
             'created_at' => $this->created_at->toDateTimeString(),

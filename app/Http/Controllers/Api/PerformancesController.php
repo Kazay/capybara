@@ -140,16 +140,16 @@ class PerformancesController extends Controller
             //     +----+    exists    |
             //     |    +--------------+
             //     |           |yes
-            //     |    +------v--------+     +------------+
-            //     |    |Date has passed+----->  Owns the  |
-            //     |    +---------------+ no  |relationship|
-            //     |          |yes            +------------+
-            //     |    +-----v--+             no|   |yes
-            //     |    |Is Admin<---------------+   |
-            //     |    +--------+                   |
-            //     |   no |     |yes                 |
-            //  +--v--+   |     |   +------+         |
-            //  |Don't<---+     +--->Delete<---------+
+            //     |    +------v--------+    +------------+
+            //     |    |Date has passed+---->  Owns the  |
+            //     |    +---------------+ no |relationship|
+            //     |          |yes           +------------+
+            //     |    +-----v--+            no|   |yes
+            //     |    |Is Admin<--------------+   |
+            //     |    +--------+                  |
+            //     |   no |     |yes                |
+            //  +--v--+   |     |   +------+        |
+            //  |Don't<---+     +--->Delete<--------+
             //  +-----+             +------+
             
             // Set the conditions before the test chart.

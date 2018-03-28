@@ -32,6 +32,10 @@ class PerformanceCollection extends ResourceCollection
                         'name' => $item->play->name,
                         'author' => $item->play->author,
                         'link' => url('api/plays/' . $item->play->id),
+                        'troupe' => [
+                            'name' => $item->play->troupe->name,
+                            'link' => url('/api/troupe/' . $item->play->troupe->id),
+                        ],
                     ],
                     'ticketing' => $ticketing,
                     'created_at' => $item->created_at->toDateTimeString(),
