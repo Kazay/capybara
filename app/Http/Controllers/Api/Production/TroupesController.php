@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api\Production;
 
+use App\Models\Play;
+use App\Models\Troupe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-use App\Models\Troupe;
+use App\Http\Resources\PlayResource;
 use App\Http\Resources\TroupeResource;
+
 
 class TroupesController extends Controller
 {
@@ -20,6 +22,13 @@ class TroupesController extends Controller
     public function show(Troupe $troupe)
     {
         return new TroupeResource($troupe);
+    }
+
+    public function showPlays($troupe)
+    {
+        $plays = Play::where('troupe_id', '=', $troupe)->paginate();
+
+        return PlayResource::collection($plays);
     }
 
     public function store(Request $req)

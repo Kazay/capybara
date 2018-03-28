@@ -52,18 +52,20 @@ Route::middleware('auth:api')->group(function() {
 
         Route::namespace('Production')->group(function () {
             // Troupes public
-            Route::get('/troupes',          'TroupesController@index');
-            Route::get('/troupes/{troupe}', 'TroupesController@show');
+            Route::get('/troupes',                  'TroupesController@index');
+            Route::get('/troupes/{troupe}',         'TroupesController@show');
+            Route::get('/troupes/{troupe}/plays',   'TroupesController@showPlays');
 
             // Directors public
-            Route::get('/directors',            'DirectorsController@index');
-            Route::get('/directors/{director}', 'DirectorsController@show');
+            Route::get('/directors',                    'DirectorsController@index');
+            Route::get('/directors/{director}',         'DirectorsController@show');
+            Route::get('/directors/{director}/plays',   'DirectorsController@showPlays');
 
             Route::middleware('role:admin')->group(function () {
                 // troupes admin
-                Route::post('/troupes',             'TroupesController@store');
-                Route::put('/troupes/{troupe}',     'TroupesController@update');
-                Route::delete('/troupes/{troupe}',  'TroupesController@destroy');
+                Route::post('/troupes',                 'TroupesController@store');
+                Route::put('/troupes/{troupe}',         'TroupesController@update');
+                Route::delete('/troupes/{troupe}',      'TroupesController@destroy');
 
                 // directors admin
                 Route::post('/directors',               'DirectorsController@store');

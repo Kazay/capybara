@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api\Production;
 
+use App\Models\Play;
 use App\Models\Director;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\PlayResource;
 use App\Http\Resources\DirectorResource;
+use Illuminate\Support\Facades\Validator;
 
 class DirectorsController extends Controller
 {
@@ -15,6 +17,13 @@ class DirectorsController extends Controller
         $directors = Director::paginate();
 
         return DirectorResource::collection($directors);
+    }
+
+    public function showPlays($director)
+    {
+        $plays = Play::where('director_id','=',$director)->paginate();
+
+        return PlayResource::collection($plays);
     }
 
     public function show(Director $director)
