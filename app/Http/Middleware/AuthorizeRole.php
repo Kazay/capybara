@@ -26,7 +26,7 @@ class AuthorizeRole
 
         foreach ($roles as $role) {
             // Bitwise check of roles
-            if (User::hasRole($request->user, 'admin')) {
+            if (User::hasRole($request->user(), 'admin')) {
                 return $next($request);
             }
         }
