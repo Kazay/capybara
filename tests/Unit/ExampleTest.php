@@ -4,16 +4,18 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Troupe;
+use App\Models\Director;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+    use RefreshDatabase;
+
+    public function testDatabase()
     {
-        $this->assertTrue(true);
+        $director = factory(\App\Models\Director::class, 20)->create();
+        $troupe = factory(\App\Models\Troupe::class, 20)->create();
+        $this->assertEquals(20, $this->getConnection()->table('directors')->count());
+        $this->assertEquals(20, $this->getConnection()->table('troupes')->count());
     }
 }

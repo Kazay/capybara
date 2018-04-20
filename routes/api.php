@@ -22,7 +22,7 @@ Route::middleware('auth:api')->group(function() {
         // public users
         Route::get('/users',                "UsersController@index");
         Route::get('/users/{user}',         "UsersController@show");
-        Route::get('/users/{user}/tickets', "UserController@ticketing");
+        Route::get('/users/{user}/tickets', "UsersController@ticketing");
 
         // Plays public
         Route::get('/plays',        'PlaysController@index');
